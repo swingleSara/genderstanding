@@ -11,3 +11,5 @@ module.exports = {
   },
   plugins: [require("daisyui")],
 }
+
+//https://www.youtube.com/watch?v=sNXfI3woBEw
