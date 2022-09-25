@@ -1,15 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*ejs"],
+  content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {
-      colors: {
-        "custom-blue": "55CDFC",
-        "custom-pink": "#5BCEFA"
-      }
-    },
+    extend: {},
   },
+  daisyui: {
+     themes: ["cupcake"],
+  }
   plugins: [require("daisyui")],
-}
+};
 
 //https://www.youtube.com/watch?v=sNXfI3woBEw
