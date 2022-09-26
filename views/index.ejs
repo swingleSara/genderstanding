@@ -1,10 +1,22 @@
 <%- include('partials/header') -%>
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a class="btn btn-ghost normal-case text-xl">Genderstanding</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal p-0">
+      <li><a>About</a></li>
+      <li><a>FAQ</a></li>
+      <li><a>Donate</a></li>
+    </ul>
+  </div>
+</div>
 
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content flex-col lg:flex-row">
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-bold">Login now!</h1>
-      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <h1 class="text-5xl font-bold">Close the Understanding Gap</h1>
+      <!-- <p class="py-6">Closing the Understanding Gap</p> -->
     </div>
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div class="card-body">
@@ -24,18 +36,12 @@
           </label>
         </div>
         <div class="form-control mt-6">
-<<<<<<< HEAD
-          <button class="btn btn-secondary">Login</button>
+          <a href ="/login" class="btn btn-primary"><button>Login</button></a>
         </div>
         <div class="form-control mt-6">
-          <button class="btn btn-primary">Sign Up</button>
-=======
-          <button class="btn btn-secondary">Sign Up</button>
+          <a href="/signup" class ="btn btn-secondary"><button>Sign Up</button></a>
         </div>
-        <div class="form-control mt-6">
-          <button class="btn btn-primary">Login</button>
->>>>>>> 3ccc0b7b931f15232820a0228b73505a198634aa
-        </div>
+
       </div>
     </div>
   </div>
