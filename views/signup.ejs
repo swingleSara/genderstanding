@@ -48,16 +48,19 @@
                               <span class="label-text">Confirm Password</span>
                             </label>
                             <input type="password" placeholder="confirm password" class="input input-bordered w-full max-w-xs" name="confirmPassword" id="confirmPassword"/>
-                            <label class="label">
-                            </label>
+                            <!-- <label class="label">
+                            </label> -->
                           </div>
                           <div class="form-control">
                             <label class="label cursor-pointer">
-                              <span class="label-text">Remember me</span> 
-                              <input type="checkbox" class="checkbox checkbox-primary" />
+                              <span class="label-text">I have <span class="text-secondary">questions</span> about gender identity</span> 
+                              <input type="checkbox" class="checkbox checkbox-secondary" name="hasQuestions" id="hasQuestions" value="hasQuestions" />
                             </label>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                            <label class="label cursor-pointer">
+                              <span class="label-text">I have <span class="text-primary">answers</span> about gender identity</span> 
+                              <input type="checkbox" class="checkbox checkbox-primary" name="hasAnswers" id="hasAnswers" value="hasAnswers" />
+                            </label>
+\                          <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                       </div>
                     </div>
