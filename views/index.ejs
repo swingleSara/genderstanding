@@ -1,18 +1,18 @@
-<%- include('partials/header') -%>
-<div class="navbar bg-base-100">
-  <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">Genderstanding</a>
-  </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal p-0">
-      <li><a>About</a></li>
-      <li><a>FAQ</a></li>
-      <li><a>Donate</a></li>
-    </ul>
-  </div>
-</div>
 
-<div class="hero min-h-screen bg-base-200">
+<%- include('partials/header') -%>
+<!-- nav bar-->
+
+<main class="container">
+  <div class="row justify-content-center">
+    <section class="col-6 mt-5">
+      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+      <div class="alert alert-danger"><%= el.msg %></div>
+      <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+      messages.info.forEach( el => { %>
+      <div class="alert alert-info"><%= el.msg %></div>
+      <% }) %> <% } %>
+
+<div class="hero min-h-fit bg-base-200">
   <div class="hero-content flex-col lg:flex-row">
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">Close the Understanding Gap</h1>
@@ -21,25 +21,28 @@
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div class="card-body">
         <div class="form-control">
+          <form action="/login" method="POST">
           <label class="label">
             <span class="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" class="input input-bordered" />
+          <input type="email" placeholder="email" class="input input-bordered" id="email" name="email" />
         </div>
         <div class="form-control">
           <label class="label">
             <span class="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" class="input input-bordered" />
+          <input type="password" placeholder="password" class="input input-bordered" id="password" name="password" />
           <label class="label">
             <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
         <div class="form-control mt-6">
-          <a href ="/feed" class="btn btn-primary"><button>Login</button></a>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
         </div>
         <div class="form-control mt-6">
-          <a href="/signup" class ="btn btn-secondary"><button>Sign Up</button></a>
+          <label class ="label">Don't have an account?</label>
+            <a href="/signup"><button type="submit" class="btn btn-secondary">Sign Up</button></a>
         </div>
 
       </div>
