@@ -3,18 +3,17 @@
     <div class="row mt-5"> -->
         <!-- <div class="col-6"> -->
 
-
           <div class="bg-base-200"> 
-          <div class="flex flex-col w-full border-opacity-50">
+            <div class="flex flex-col w-full border-opacity-50">
             <!-- <div class="grid max-h-fit max-w-fit card bg-base-300 rounded-box place-items-left ml-10 pl-3 pr-3">
               <div>
                 <h2 class="text-primary">User Info</h2>
                     <p><strong>User Name</strong>: <%= user.userName %></p>
                     <p><strong>Email</strong>: <%= user.email %></p> -->
                     <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
-                </div>
             </div>
-            <!-- <div class="divider"></div> -->
+          </div>
+
             <div class="grid max-h-fit min-w-fit card bg-base-200 rounded-box place-items-center">
               <div class="mt-5 mb-5">
                 <div class="collapse collapse-arrow">
@@ -42,12 +41,8 @@
                     </form>
                   </div>
                 </div>
-
               </div>
             </div>
-          </div>
-
-        <!-- </div> -->
         <div class="col-6">
           <ul class="row list-unstyled">
           <% for(var i=0; i<posts.length; i++) {%>
@@ -62,7 +57,4 @@
             <!-- <a class="btn btn-primary" href="/feed">Return to Feed</a> -->
           </div>
         </div>
-        </div>
-      <!-- </div>
-    </div> -->
 <%- include('partials/footer') -%>
