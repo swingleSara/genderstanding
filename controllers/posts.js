@@ -29,18 +29,22 @@ module.exports = {
     }
   },
   createPost: async (req, res) => {
-    try {
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
 
-      await Post.create({
+ 
+    try {
+      // // Upload image to cloudinary
+      const postData = {
         title: req.body.title,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
-      });
+       } 
+      if(req.file){
+      const result = await cloudinary.uploader.upload(req.file.path);
+        postData.image = result.secure_url,
+        postData.cloudinaryId = result.public_id
+    }
+      await Post.create(postData);
       console.log("Post has been added!");
       res.redirect("/profile");
     } catch (err) {

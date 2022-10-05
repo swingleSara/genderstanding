@@ -13,8 +13,12 @@
                     <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
             </div>
           </div>
+          <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <textarea id="title" name="title" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+          </form>
 
-            <div class="grid max-h-fit min-w-fit card bg-base-200 rounded-box place-items-center">
+            <!-- <div class="grid max-h-fit min-w-fit card bg-base-200 rounded-box place-items-center">
               <div class="mt-5 mb-5">
                 <div class="collapse collapse-arrow">
                   <input type="checkbox" /> 
@@ -22,12 +26,9 @@
                     Ask a question
                   </div>
                   <div class="collapse-content form-control"> 
-                    <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+
                       <div class="mb-5">
-                        <!-- <label class="label">
-                          <span class="label-text">Email</span>
-                        </label> -->
-                        <input type="text" placeholder="headline" class="mt-5 input input-bordered min-w-full" id="headline" name="headline" />
+                        <input type="text" placeholder="headline" class="mt-5 input input-bordered min-w-full" id="title" name="title" />
                       </div>
                       <div class="mb-3">
                         <label for="caption" class="form-label">Details</label>
@@ -37,28 +38,24 @@
                         <label for="imgUpload" class="form-label">Image</label>
                         <input type="file" class="form-control" id="imageUpload" name="file">
                       </div>
-                      <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-                    </form>
+
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> -->
           <div class="divider"></div>
 
-        <!-- </div> -->
-        <div class="col-6">
-          <ul class="row list-unstyled">
-          <% for(var i=0; i<posts.length; i++) {%>
-            <li class="col-6 justify-content-between mt-5">
-              <a href="/post/<%= posts[i]._id%>">
-                <img class="img-fluid" src="<%= posts[i].image%>">
-              </a>
-            </li>
-          <% } %>
-          </ul>
-          <div class="row justify-content-center mt-5 mb-5">
-            <!-- <a class="btn btn-primary" href="/feed">Return to Feed</a> -->
-          </div>
-        </div>
+          <div class="grid bg-base-200 justify-items-center mt-5">
+            <ul class="row list-unstyled">
+              <% for(var i=0; i<posts.length; i++) {%>
+                <li class="col-6 flex justify-items-center mt-5 mb-5 border border-white">
+                  <a href="/post/<%= posts[i]._id%>">
+                    <h2><%= posts[i].title%></h2>
+                    <img class="img-fluid" src="<%= posts[i].image%>">
+                    
+                  </a>
+                </li>
+              <% } %>
+              </ul>
+          </div>  
 <%- include('partials/footer') -%>
