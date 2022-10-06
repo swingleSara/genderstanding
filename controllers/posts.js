@@ -30,7 +30,6 @@ module.exports = {
   },
   createPost: async (req, res) => {
 
- 
     try {
       // // Upload image to cloudinary
       const postData = {
